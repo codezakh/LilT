@@ -1,0 +1,53 @@
+version: 2
+train_file: [
+  "./storage/10/coco2017/pretrain-pairs.json",
+  # "./storage/10/visual-genome-sandbox/visual-genome-pairs.json",
+  # "./storage/10/sbu-captions/sbu-pretrain-pairs.json",
+  # "./storage/10/cc3m/cc3m-train-pairs.json",
+  # "./storage/10/cc3m/cc3m-val-pairs.json",
+]
+
+image_res: 256
+embed_dim: 256
+batch_size: 128
+temp: 0.07
+
+optimizer: {opt: adamW, lr: 1e-4, weight_decay: 0.02}
+schedular: {sched: cosine, lr: 1e-4, epochs: 15, min_lr: 1e-5, decay_rate: 1, warmup_lr: 1e-5, warmup_epochs: 10, cooldown_epochs: 0}
+
+disable_wandb: true
+
+text_encoder: tiny
+vision_encoder: tiny
+pretrained_text: true
+pretrained_vision: true
+freeze_text_encoder: false
+freeze_vision_encoder: false
+freeze_proj: false 
+unlock_layernorm: false
+add_adapter: false
+adapter_append: false
+fp16: false
+limit_num_samples: false
+unlock_dense: false
+unlock_attn: false
+unlock_random: false
+bitfit: false
+
+# Can be set to False if, for example, you are adding adapters
+# to a pretrained model before loading weights (common case).
+load_strict: true
+
+model_config:
+  import_path: models.clip_adjustable.CLIP
+
+conventional_adapter:
+  insert: false
+  reduction_factor: 4
+
+always_freeze:
+  visual_encoder: []
+  text_encoder: []
+
+# Not used, just there for backwards compatibility.
+alpha: 0

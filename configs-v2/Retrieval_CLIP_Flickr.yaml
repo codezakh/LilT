@@ -1,0 +1,34 @@
+version: 1
+defaults:
+  - bert_config: bert
+  - _self_ # values defined in _this_ take precedence over defaults
+
+train_file:  ['/net/acadia10a/data/zkhan/downstream-finetuning-json/flickr30k_train.json']
+val_file: '/net/acadia10a/data/zkhan/downstream-finetuning-json/flickr30k_test.json' 
+test_file: '/net/acadia10a/data/zkhan/downstream-finetuning-json/flickr30k_test.json'
+image_root: '/net/acadia10a/data/zkhan/flickr30k/'  
+save_sims: '/net/acadia10a/data/zkhan/albef-sims'
+
+image_res: 256 #384
+batch_size_train: 32
+batch_size_test: 64
+
+queue_size: 65536
+momentum: 0.995
+vision_width: 768
+embed_dim: 256
+temp: 0.07
+k_test: 128
+mlm_probability: 0.15 
+
+alpha: 0.4
+distill: True
+warm_up: True
+
+optimizer: {opt: adamW, lr: 1e-5, weight_decay: 0.02} 
+schedular: {sched: cosine, lr: 1e-5, epochs: 10, min_lr: 1e-6, decay_rate: 1, warmup_lr: 1e-5, warmup_epochs: 1, cooldown_epochs: 0}
+
+vit_mask_token: false
+
+model_config:
+  import_path: models.clip.CLIP

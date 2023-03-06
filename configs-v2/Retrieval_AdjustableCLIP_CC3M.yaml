@@ -1,0 +1,50 @@
+version: 2
+
+train_file:  []
+val_file: './storage/10/cc3m/cc3m-val-pairs-in-test-format.json'
+test_file: './storage/10/cc3m/cc3m-val-pairs-in-test-format.json'
+image_root: './storage/10/cc3m/cc-data'  
+save_sims: './storage/10/sims'
+
+image_res: 256 #384
+embed_dim: 256
+temp: 0.07
+batch_size_train: 32
+batch_size_test: 64
+k_test: 128
+
+alpha: 0.4
+
+optimizer: {opt: adamW, lr: 1e-5, weight_decay: 0.02} 
+schedular: {sched: cosine, lr: 1e-5, epochs: 10, min_lr: 1e-6, decay_rate: 1, warmup_lr: 1e-5, warmup_epochs: 1, cooldown_epochs: 0}
+
+text_encoder: tiny
+vision_encoder: tiny
+adapter_append: false
+
+model_config:
+  import_path: models.clip_adjustable.CLIP
+
+# This doesn't matter for evaluation, but we have to
+# include it anyway because my code is spaghetti rn.
+pretrained_text: true
+pretrained_vision: true
+freeze_text_encoder: false
+freeze_vision_encoder: false
+unlock_layernorm: false
+limit_num_samples: false
+add_adapter: false
+freeze_proj: false
+unlock_dense: false
+unlock_attn: false
+unlock_random: false
+bitfit: false
+always_freeze:
+  visual_encoder: []
+  text_encoder: []
+
+# This should match how the model was trained, or results
+# will not make sense.
+conventional_adapter:
+  insert: false
+  reduction_factor: 4
