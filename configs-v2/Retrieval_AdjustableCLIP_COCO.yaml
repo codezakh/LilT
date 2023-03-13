@@ -1,10 +1,10 @@
 version: 2
 
-train_file:  ['/net/acadia10a/data/zkhan/downstream-finetuning-json/coco_train.json']
-val_file: '/net/acadia10a/data/zkhan/downstream-finetuning-json/coco_val.json'                
-test_file: '/net/acadia10a/data/zkhan/downstream-finetuning-json/coco_test.json'
-image_root: '/net/acadia10a/data/zkhan/coco2014'
-save_sims: 'net/acadia10a/data/zkhan/sandbox'
+train_file:  ['./storage/10/downstream-finetuning-json/coco_train.json']
+val_file: './storage/10/downstream-finetuning-json/coco_val.json'                
+test_file: './storage/10/downstream-finetuning-json/coco_test.json'
+image_root: './storage/10/coco2014'
+save_sims: './storage/10/sandbox'
 
 image_res: 256 #384
 embed_dim: 256

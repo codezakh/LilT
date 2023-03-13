@@ -1,10 +1,10 @@
 version: 2
 
-train_file:  ['/net/acadia10a/data/zkhan/downstream-finetuning-json/flickr30k_train.json']
-val_file: '/net/acadia10a/data/zkhan/downstream-finetuning-json/flickr30k_test.json' 
-test_file: '/net/acadia10a/data/zkhan/downstream-finetuning-json/flickr30k_test.json'
-image_root: '/net/acadia10a/data/zkhan/flickr30k/'  
-save_sims: '/net/acadia10a/data/zkhan/albef-sims'
+train_file:  ['./storage/10//downstream-finetuning-json/flickr30k_train.json']
+val_file: './storage/10/downstream-finetuning-json/flickr30k_test.json' 
+test_file: './storage/10/downstream-finetuning-json/flickr30k_test.json'
+image_root: './storage/10/flickr30k/'  
+save_sims: './storage/10/albef-sims'
 
 image_res: 256 #384
 embed_dim: 256

@@ -1,10 +1,10 @@
 version: 2
 
-train_file:  ['/net/acadia10a/data/zkhan/fashion-gen/train_pairs.json']
-val_file: '/net/acadia10a/data/zkhan/fashion-gen/test_pairs.json'
-test_file: '/net/acadia10a/data/zkhan/fashion-gen/test_pairs.json'
-image_root: '/net/acadia10a/data/zkhan/fashion-gen/'
-save_sims: '/net/acadia10a/data/zkhan/albef-sims'
+train_file:  ['./storage/10/fashion-gen/train_pairs.json']
+val_file: './storage/10/fashion-gen/test_pairs.json'
+test_file: './storage/10/fashion-gen/test_pairs.json'
+image_root: './storage/10/fashion-gen/'
+save_sims: './storage/10/albef-sims'
 
 image_res: 256 #384
 embed_dim: 256
