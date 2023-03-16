@@ -74,7 +74,7 @@ python -m torch.distributed.launch --nproc_per_node=1 --use_env classification.p
  --checkpoint ./storage/lilt_example/checkpoint_14.pth \ --evaluate \
   --overrides text_encoder=base vision_encoder=base
 ```
- The value `--config` flag is not a typo, we just reuse the same config for classification and retrieval.
+ The value of the `--config` flag is not a typo, we just reuse the same config for classification and retrieval.
 
 ## Retrieval
 Follow the instructions in [codezakh/SIMLA#zero-shot-flickr](https://github.com/codezakh/SIMLA#zero-shot-flickr) to set up the data for Flickr.
@@ -84,7 +84,7 @@ The only change is that you should edit `configs-v2/Retrieval_AdjustableCLIP_Fli
 See `examples/evaluate_{clip, lilt, lit}.sh` for evaluation scripts.
 
 ## Multilingual Retrieval
-Download the XD10 from [official repo](https://github.com/adobe-research/Cross-lingual-Test-Dataset-XTD10). 
+Download the XD10 dataset from [official repo](https://github.com/adobe-research/Cross-lingual-Test-Dataset-XTD10). 
 Then, run the script `process_xd10.py`, making sure to edit the paths at the top of the file:
 ```python
 XTD10_DIR = Path("/home/zkhan/Cross-lingual-Test-Dataset-XTD10/XTD10")
@@ -105,7 +105,7 @@ python -m torch.distributed.launch --master_port=40770 \
 vision_encoder=base \
 test_file=$XD10_OUTPUT_DIR/val.json"
 ```
-where `XD10_OUTPUT_DIR` is the place where you told the `process_xd10.py` script to put the preprocessed dataset.
+where `XD10_OUTPUT_DIR` is the place you told the `process_xd10.py` script to put the preprocessed dataset.
 
 To evaluate on a specific language as done in the paper, change `test_file=$XD10_OUTPUT_DIR/val.json` to `test_file=$XD10_OUTPUT_DIR/val_{lang_abbrv}.json` where `lang_abbrv` is one of the following:
 ```
