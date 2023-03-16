@@ -1,8 +1,5 @@
 # LilT
 Contrastive Aligned of Vision to Language Through Parameter-Efficient Transfer Learning [ICLR 23]
-
-**Note: Code release is a work in progress, and will be complete soon. In the meantime, follow the dataset and environment setup in zaidkhan.me/SIMLA, and check the `experiments/` directory**.
-
 # Setup
 ## Dependencies
 ```
@@ -11,6 +8,7 @@ conda env create --name lilt --file environment.yaml
 ## Data
 See individual sections below for instructions.
 ## Weights
+**Weights will be released soon.**
 # Pretraining
 ## Pretraining Data
 The data format used for pretraining looks like this:
@@ -59,7 +57,6 @@ You will need around 32GB of GPU memory (with 4x GPUs) to match the training set
 Of course, you can always lower the batch size if you want to train on a single GPU.
 
 # Evaluation
-**WIP**
 ## Classification
 First, set up the ImageNetv2 dataset as described [here](https://github.com/modestyachts/ImageNetV2). 
 Next, edit `classification.py`, specifically this part:
