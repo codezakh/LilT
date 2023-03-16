@@ -5,9 +5,9 @@ from typing import List
 import json
 from collections import defaultdict
 
-XTD10_DIR = Path("/home/mai/zkhan/Cross-lingual-Test-Dataset-XTD10/XTD10")
-COCO_TRAIN_DIR = Path("/net/acadia10a/data/zkhan/coco2014/train2014")
-OUTPUT_DIR = Path("/net/acadia10a/data/zkhan/multilingual_coco2014_xtd10")
+XTD10_DIR = Path("/home/zkhan/Cross-lingual-Test-Dataset-XTD10/XTD10")
+COCO_TRAIN_DIR = Path("./storage/10/coco2014/train2014")
+OUTPUT_DIR = Path("./storage/10/multilingual_coco2014_xtd10")
 LANGUAGES = ("es", "it", "ko", "pl", "ru", "tr", "zh")
 
 OUTPUT_DIR.mkdir(exist_ok=True)
