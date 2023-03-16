@@ -79,10 +79,14 @@ python -m torch.distributed.launch --nproc_per_node=1 --use_env classification.p
 ```
  The value `--config` flag is not a typo, we just reuse the same config for classification and retrieval.
 
-
 ## Retrieval
+Follow the instructions in [codezakh/SIMLA#zero-shot-flickr](https://github.com/codezakh/SIMLA#zero-shot-flickr) to set up the data for Flickr.
+The only change is that you should edit `configs-v2/Retrieval_AdjustableCLIP_Flickr.yaml` to point to the downloaded dataset rather than `configs/Retrieval_flickr.yaml`.
 
-# Citations
+
+See `examples/evaluate_{clip, lilt, lit}.sh` for evaluation scripts.
+
+# Citation
 
 # Acknowledgements
 This code borrows heavily from https://github.com/salesforce/ALBEF.
