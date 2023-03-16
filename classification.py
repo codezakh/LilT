@@ -223,7 +223,7 @@ def main(args, config):
     print("Creating retrieval dataset")
     # train_dataset, val_dataset, test_dataset = create_dataset('re', config)
     test_dataset = ImageNetV2Dataset(
-        location="/net/acadia10a/data/zkhan/imagenet_v2", transform=test_transform
+        location="./storage/10/imagenet_v2", transform=test_transform
     )
 
     if args.distributed:

@@ -61,6 +61,25 @@ Of course, you can always lower the batch size if you want to train on a single 
 # Evaluation
 **WIP**
 ## Classification
+First, set up the ImageNetv2 dataset as described [here](https://github.com/modestyachts/ImageNetV2). 
+Next, edit `classification.py`, specifically this part:
+```python
+test_dataset = ImageNetV2Dataset(
+    location="./storage/10/imagenet_v2", transform=test_transform
+)
+```
+to point to wherever you downloaded ImageNetV2.
+To run multimodal classification, you can use a command like the following:
+```bash
+python -m torch.distributed.launch --nproc_per_node=1 --use_env classification.py \
+--config Retrieval_AdjustableCLIP_Flickr \
+--output_dir ./clf_output \
+ --checkpoint ./storage/lilt_example/checkpoint_14.pth \ --evaluate \
+  --overrides text_encoder=base vision_encoder=base
+```
+ The value `--config` flag is not a typo, we just reuse the same config for classification and retrieval.
+
+
 ## Retrieval
 
 # Citations
