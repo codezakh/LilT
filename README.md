@@ -1,3 +1,5 @@
+[![Paper](http://img.shields.io/badge/paper-arxiv.2303.11866-B31B1B.svg)](https://arxiv.org/abs/2303.11866)
+[![Conference](https://img.shields.io/badge/ICLR-2023-blue)](https://iclr.cc/virtual/2023/poster/11712)
 # LilT
 Contrastive Aligned of Vision to Language Through Parameter-Efficient Transfer Learning [ICLR 23]
 # Setup
@@ -8,7 +10,10 @@ conda env create --name lilt --file environment.yaml
 ## Data
 See individual sections below for instructions.
 ## Weights
-**Weights will be released soon.**
+The links to the weights all point to Google Drive. 
+To download them without a browser, do `pip install gdown` use the ID of the file you want to download. For example, to download model weights at `https://drive.google.com/file/d/1mdXQK9Jidk97FrLR2Bqzhbuptt07BPo4/view?usp=drive_link`, you would use `gdown 1mdXQK9Jidk97FrLR2Bqzhbuptt07BPo4`.
+The weights were saved with `torch.save()` and can be loaded with `torch.load()`.
+- [500K Training Pairs](https://drive.google.com/drive/folders/1hfNlZVohcdoWnx-rrQG-BXUHcYjTDNW1?usp=drive_link)
 # Pretraining
 ## Pretraining Data
 The data format used for pretraining looks like this:
@@ -115,6 +120,15 @@ LANGUAGES = ("es", "it", "ko", "pl", "ru", "tr", "zh")
 
 
 # Citation
+```
+@inproceedings{ContrastiveAlignmentVisionFu2023,
+  title = {Contrastive Alignment of Vision to Language Through Parameter-Efficient Transfer Learning},
+  booktitle = {The Eleventh International Conference on Learning Representations},
+  author = {Khan, Zaid and Fu, Yun},
+  year = {2023},
+}
+
+```
 
 # Acknowledgements
 This code borrows heavily from https://github.com/salesforce/ALBEF.
